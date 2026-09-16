@@ -5,7 +5,7 @@ Welcome to your personal R&D workspace for Ninja CREAMi ice cream and sorbet exp
 ## Creative DNA & Philosophy
 - **Goal:** Create vibrant, well-textured, fruit-forward and botanical frozen treats.
 - **Preferences:** Low-to-moderate sweetness, intense natural flavor, smooth micro-crystal texture.
-- **System Rules:** Units are always in **grams (g)** or **milliliters (ml)**. History is never overwritten.
+- **System Rules:** Units are always in **grams (g)** or **milliliters (ml)**. History is never overwritten. 
 
 ## System Files Overview
 1. `README.md` — Project guide & system DNA.
