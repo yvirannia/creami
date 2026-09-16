@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CREAMI — Yvi's Ice Cream Lab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { background-color: #FBF9F5; color: #231F20; }
+    .bg-cream { background-color: #FBF9F5; }
+    .bg-terracotta { background-color: #C86D51; }
+    .text-terracotta { color: #C86D51; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans">
+  <!-- Header -->
+  <header class="border-b border-stone-200 bg-white px-6 py-4 flex justify-between items-center shadow-sm">
+    <div class="flex items-center space-x-3">
+      <span class="text-2xl">🍦</span>
+      <h1 class="text-xl font-bold tracking-tight text-stone-800">Yvi's Ice Cream Lab</h1>
+    </div>
+    <span class="text-xs bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full font-medium">Ninja CREAMi R&D</span>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-6">
+    <div class="mb-8">
+      <h2 class="text-2xl font-serif font-semibold text-stone-800">R&D Workspace</h2>
+      <p class="text-stone-600 text-sm mt-1">Track flavor ideas, run trials, and record your frozen treat experiments.</p>
+    </div>
+
+    <!-- 3-Column Board -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Ideas -->
+      <div class="bg-stone-100/70 rounded-xl p-4 border border-stone-200">
+        <h3 class="font-medium text-stone-700 mb-3 flex items-center justify-between">
+          <span>💡 FLAVOR IDEAS</span>
+          <span class="text-xs bg-stone-200 text-stone-600 px-2 py-0.5 rounded-full">3</span>
+        </h3>
+        <div class="space-y-3">
+          <div class="bg-white p-3.5 rounded-lg shadow-sm border border-stone-200">
+            <h4 class="font-semibold text-stone-800 text-sm">Jasmine Lychee</h4>
+            <p class="text-xs text-stone-500 mt-1">Botanical tea + tropical fruit</p>
+          </div>
+          <div class="bg-white p-3.5 rounded-lg shadow-sm border border-stone-200">
+            <h4 class="font-semibold text-stone-800 text-sm">Black Sesame</h4>
+            <p class="text-xs text-stone-500 mt-1">Rich nutty profile</p>
+          </div>
+          <div class="bg-white p-3.5 rounded-lg shadow-sm border border-stone-200">
+            <h4 class="font-semibold text-stone-800 text-sm">Strawberry Basil</h4>
+            <p class="text-xs text-stone-500 mt-1">Herbal summer berry</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- In Experiment -->
+      <div class="bg-amber-50/60 rounded-xl p-4 border border-amber-200/60">
+        <h3 class="font-medium text-amber-900 mb-3 flex items-center justify-between">
+          <span>🔬 IN EXPERIMENT</span>
+          <span class="text-xs bg-amber-200/60 text-amber-800 px-2 py-0.5 rounded-full">2</span>
+        </h3>
+        <div class="space-y-3">
+          <div class="bg-white p-3.5 rounded-lg shadow-sm border border-stone-200">
+            <h4 class="font-semibold text-stone-800 text-sm">Thai Tea</h4>
+            <p class="text-xs text-stone-500 mt-1">Trial #1 logged</p>
+          </div>
+          <div class="bg-white p-3.5 rounded-lg shadow-sm border border-stone-200">
+            <h4 class="font-semibold text-stone-800 text-sm">Mango Lime</h4>
+            <p class="text-xs text-stone-500 mt-1">Awaiting spin</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final Recipes -->
+      <div class="bg-emerald-50/60 rounded-xl p-4 border border-emerald-200/60">
+        <h3 class="font-medium text-emerald-900 mb-3 flex items-center justify-between">
+          <span>🏆 FINAL RECIPES</span>
+          <span class="text-xs bg-emerald-200/60 text-emerald-800 px-2 py-0.5 rounded-full">1</span>
+        </h3>
+        <div class="space-y-3">
+          <div class="bg-white p-3.5 rounded-lg shadow-sm border border-stone-200">
+            <div class="flex justify-between items-start">
+              <h4 class="font-semibold text-stone-800 text-sm">Jasmine Lychee Sorbet</h4>
+              <span class="text-xs text-amber-500">⭐</span>
+            </div>
+            <p class="text-xs text-stone-500 mt-1">Master v1.0 • Sorbet Preset</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-stone-200 text-center py-4 text-xs text-stone-500">
+    CREAMI Lab — Data stored locally in browser
+  </footer>
+</body>
+</html>
