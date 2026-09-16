@@ -1,100 +1,649 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CREAMI — Yvi's Ice Cream Lab</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body { background-color: #FBF9F5; color: #231F20; }
-    .bg-cream { background-color: #FBF9F5; }
-    .bg-terracotta { background-color: #C86D51; }
-    .text-terracotta { color: #C86D51; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREAMI — Yvi's Ice Cream Lab</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FBF9F5',
+                        creamDark: '#F3EFE6',
+                        espresso: '#231F20',
+                        terracotta: '#C86D51',
+                        terracottaLight: '#F3E6E2',
+                        pistachio: '#768B6E',
+                        pistachioLight: '#EAF0E8',
+                    },
+                    fontFamily: {
+                        serif: ['"DM Serif Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FBF9F5;
+            color: #231F20;
+            font-family: 'Inter', sans-serif;
+        }
+        .heading-font {
+            font-family: 'DM Serif Display', serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F3EFE6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D1C7BD;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C86D51;
+        }
+    </style>
 </head>
-<body class="min-h-screen flex flex-col font-sans">
-  <!-- Header -->
-  <header class="border-b border-stone-200 bg-white px-6 py-4 flex justify-between items-center shadow-sm">
-    <div class="flex items-center space-x-3">
-      <span class="text-2xl">🍦</span>
-      <h1 class="text-xl font-bold tracking-tight text-stone-800">Yvi's Ice Cream Lab</h1>
-    </div>
-    <span class="text-xs bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full font-medium">Ninja CREAMi R&D</span>
-  </header>
+<body class="min-h-screen flex flex-col antialiased">
+    <!-- Navigation Header -->
+    <header class="border-b border-stone-200 bg-cream sticky top-0 z-30 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <span class="text-3xl">🍦</span>
+                    <div>
+                        <h1 class="heading-font text-2xl sm:text-3xl font-bold tracking-tight text-espresso">CREAMI</h1>
+                        <p class="text-xs text-stone-500 font-medium tracking-wide uppercase">Yvi's Ice Cream R&D Lab</p>
+                    </div>
+                </div>
 
-  <!-- Main Content -->
-  <main class="flex-1 max-w-7xl w-full mx-auto p-6">
-    <div class="mb-8">
-      <h2 class="text-2xl font-serif font-semibold text-stone-800">R&D Workspace</h2>
-      <p class="text-stone-600 text-sm mt-1">Track flavor ideas, run trials, and record your frozen treat experiments.</p>
-    </div>
-
-    <!-- 3-Column Board -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      
-      <!-- Ideas -->
-      <div class="bg-stone-100/70 rounded-xl p-4 border border-stone-200">
-        <h3 class="font-medium text-stone-700 mb-3 flex items-center justify-between">
-          <span>💡 FLAVOR IDEAS</span>
-          <span class="text-xs bg-stone-200 text-stone-600 px-2 py-0.5 rounded-full">3</span>
-        </h3>
-        <div class="space-y-3">
-          <div class="bg-white p-3.5 rounded-lg shadow-sm border border-stone-200">
-            <h4 class="font-semibold text-stone-800 text-sm">Jasmine Lychee</h4>
-            <p class="text-xs text-stone-500 mt-1">Botanical tea + tropical fruit</p>
-          </div>
-          <div class="bg-white p-3.5 rounded-lg shadow-sm border border-stone-200">
-            <h4 class="font-semibold text-stone-800 text-sm">Black Sesame</h4>
-            <p class="text-xs text-stone-500 mt-1">Rich nutty profile</p>
-          </div>
-          <div class="bg-white p-3.5 rounded-lg shadow-sm border border-stone-200">
-            <h4 class="font-semibold text-stone-800 text-sm">Strawberry Basil</h4>
-            <p class="text-xs text-stone-500 mt-1">Herbal summer berry</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- In Experiment -->
-      <div class="bg-amber-50/60 rounded-xl p-4 border border-amber-200/60">
-        <h3 class="font-medium text-amber-900 mb-3 flex items-center justify-between">
-          <span>🔬 IN EXPERIMENT</span>
-          <span class="text-xs bg-amber-200/60 text-amber-800 px-2 py-0.5 rounded-full">2</span>
-        </h3>
-        <div class="space-y-3">
-          <div class="bg-white p-3.5 rounded-lg shadow-sm border border-stone-200">
-            <h4 class="font-semibold text-stone-800 text-sm">Thai Tea</h4>
-            <p class="text-xs text-stone-500 mt-1">Trial #1 logged</p>
-          </div>
-          <div class="bg-white p-3.5 rounded-lg shadow-sm border border-stone-200">
-            <h4 class="font-semibold text-stone-800 text-sm">Mango Lime</h4>
-            <p class="text-xs text-stone-500 mt-1">Awaiting spin</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Final Recipes -->
-      <div class="bg-emerald-50/60 rounded-xl p-4 border border-emerald-200/60">
-        <h3 class="font-medium text-emerald-900 mb-3 flex items-center justify-between">
-          <span>🏆 FINAL RECIPES</span>
-          <span class="text-xs bg-emerald-200/60 text-emerald-800 px-2 py-0.5 rounded-full">1</span>
-        </h3>
-        <div class="space-y-3">
-          <div class="bg-white p-3.5 rounded-lg shadow-sm border border-stone-200">
-            <div class="flex justify-between items-start">
-              <h4 class="font-semibold text-stone-800 text-sm">Jasmine Lychee Sorbet</h4>
-              <span class="text-xs text-amber-500">⭐</span>
+                <!-- Action Controls -->
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <button onclick="exportData()" title="Export JSON Data" class="px-3 py-2 text-xs font-semibold text-stone-700 bg-stone-100 hover:bg-stone-200 rounded-lg border border-stone-300 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-download"></i> <span class="hidden sm:inline">Export Backup</span>
+                    </button>
+                    <label title="Import JSON Data" class="px-3 py-2 text-xs font-semibold text-stone-700 bg-stone-100 hover:bg-stone-200 rounded-lg border border-stone-300 transition cursor-pointer flex items-center gap-1.5">
+                        <i class="fa-solid fa-upload"></i> <span class="hidden sm:inline">Import</span>
+                        <input type="file" id="importFileInput" onchange="importData(event)" accept=".json" class="hidden">
+                    </label>
+                </div>
             </div>
-            <p class="text-xs text-stone-500 mt-1">Master v1.0 • Sorbet Preset</p>
-          </div>
+
+            <!-- Tab Links -->
+            <nav class="flex space-x-2 sm:space-x-6 overflow-x-auto border-t border-stone-200/60 pt-2 pb-3">
+                <button onclick="switchTab('board')" id="tab-board" class="tab-btn px-3 py-2 text-sm font-medium rounded-lg whitespace-nowrap transition bg-espresso text-cream">
+                    <i class="fa-solid fa-columns mr-1.5"></i> R&D Board
+                </button>
+                <button onclick="switchTab('recipes')" id="tab-recipes" class="tab-btn px-3 py-2 text-sm font-medium text-stone-600 hover:text-espresso hover:bg-stone-100 rounded-lg whitespace-nowrap transition">
+                    <i class="fa-solid fa-book-bookmark mr-1.5"></i> Master Recipes
+                </button>
+                <button onclick="switchTab('trials')" id="tab-trials" class="tab-btn px-3 py-2 text-sm font-medium text-stone-600 hover:text-espresso hover:bg-stone-100 rounded-lg whitespace-nowrap transition">
+                    <i class="fa-solid fa-flask mr-1.5"></i> Trial Logs
+                </button>
+                <button onclick="switchTab('ideas')" id="tab-ideas" class="tab-btn px-3 py-2 text-sm font-medium text-stone-600 hover:text-espresso hover:bg-stone-100 rounded-lg whitespace-nowrap transition">
+                    <i class="fa-solid fa-lightbulb mr-1.5"></i> Idea Bank
+                </button>
+                <button onclick="switchTab('dna')" id="tab-dna" class="tab-btn px-3 py-2 text-sm font-medium text-stone-600 hover:text-espresso hover:bg-stone-100 rounded-lg whitespace-nowrap transition">
+                    <i class="fa-solid fa-fingerprint mr-1.5"></i> Creative DNA
+                </button>
+            </nav>
         </div>
-      </div>
+    </header>
 
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- SECTION 1: R&D KANBAN BOARD -->
+        <section id="view-board" class="tab-content space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="heading-font text-3xl text-espresso">R&D Experimentation Board</h2>
+                    <p class="text-sm text-stone-600">Track flavors from initial spark to perfected recipe.</p>
+                </div>
+                <button onclick="openModal('flavor')" class="px-4 py-2.5 bg-terracotta hover:bg-terracotta/90 text-white font-medium rounded-xl text-sm shadow-sm transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-plus"></i> New Flavor Concept
+                </button>
+            </div>
+
+            <!-- Kanban Columns -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Column 1: Flavor Ideas -->
+                <div class="bg-creamDark/60 rounded-2xl p-4 border border-stone-200 flex flex-col h-[70vh]">
+                    <div class="flex items-center justify-between mb-4 pb-2 border-b border-stone-300">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                            <h3 class="font-semibold text-espresso">Flavor Ideas</h3>
+                        </div>
+                        <span id="count-ideas" class="text-xs font-bold px-2 py-0.5 bg-stone-200 text-stone-700 rounded-full">0</span>
+                    </div>
+                    <div id="col-ideas" class="flex-grow overflow-y-auto space-y-3 pr-1" ondragover="allowDrop(event)" ondrop="drop(event, 'Flavor Ideas')">
+                        <!-- Flavor cards injected here -->
+                    </div>
+                </div>
+
+                <!-- Column 2: In Experiment -->
+                <div class="bg-creamDark/60 rounded-2xl p-4 border border-stone-200 flex flex-col h-[70vh]">
+                    <div class="flex items-center justify-between mb-4 pb-2 border-b border-stone-300">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-terracotta"></span>
+                            <h3 class="font-semibold text-espresso">In Experiment</h3>
+                        </div>
+                        <span id="count-experiment" class="text-xs font-bold px-2 py-0.5 bg-terracottaLight text-terracotta rounded-full">0</span>
+                    </div>
+                    <div id="col-experiment" class="flex-grow overflow-y-auto space-y-3 pr-1" ondragover="allowDrop(event)" ondrop="drop(event, 'In Experiment')">
+                        <!-- Flavor cards injected here -->
+                    </div>
+                </div>
+
+                <!-- Column 3: Final Recipes -->
+                <div class="bg-creamDark/60 rounded-2xl p-4 border border-stone-200 flex flex-col h-[70vh]">
+                    <div class="flex items-center justify-between mb-4 pb-2 border-b border-stone-300">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-pistachio"></span>
+                            <h3 class="font-semibold text-espresso">Final Master Recipes</h3>
+                        </div>
+                        <span id="count-final" class="text-xs font-bold px-2 py-0.5 bg-pistachioLight text-pistachio rounded-full">0</span>
+                    </div>
+                    <div id="col-final" class="flex-grow overflow-y-auto space-y-3 pr-1" ondragover="allowDrop(event)" ondrop="drop(event, 'Final Recipes')">
+                        <!-- Flavor cards injected here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: MASTER RECIPES -->
+        <section id="view-recipes" class="tab-content hidden space-y-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h2 class="heading-font text-3xl text-espresso">Master Recipes</h2>
+                    <p class="text-sm text-stone-600">Your finalized, battle-tested ice cream and sorbet formulations.</p>
+                </div>
+            </div>
+            <div id="master-recipes-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Master Recipe Cards -->
+            </div>
+        </section>
+
+        <!-- SECTION 3: TRIAL LOGS -->
+        <section id="view-trials" class="tab-content hidden space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                <div>
+                    <h2 class="heading-font text-3xl text-espresso">Trial Logs</h2>
+                    <p class="text-sm text-stone-600">Chronological list of all experiments and iterations.</p>
+                </div>
+                <button onclick="openModal('trial')" class="px-4 py-2.5 bg-terracotta hover:bg-terracotta/90 text-white font-medium rounded-xl text-sm shadow-sm transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-plus"></i> Log New Trial
+                </button>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-sm">
+                <div id="trials-timeline" class="space-y-6">
+                    <!-- Trial list injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: IDEA BANK -->
+        <section id="view-ideas" class="tab-content hidden space-y-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h2 class="heading-font text-3xl text-espresso">Flavor Idea Bank</h2>
+                    <p class="text-sm text-stone-600">Frictionless capture for raw thoughts and flavor combinations.</p>
+                </div>
+                <button onclick="openModal('idea')" class="px-4 py-2 bg-espresso hover:bg-stone-800 text-white text-sm font-medium rounded-xl transition">
+                    <i class="fa-solid fa-lightbulb mr-1"></i> Add Idea
+                </button>
+            </div>
+            <div id="ideas-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <!-- Idea sticky notes -->
+            </div>
+        </section>
+
+        <!-- SECTION 5: CREATIVE DNA -->
+        <section id="view-dna" class="tab-content hidden space-y-6">
+            <div>
+                <h2 class="heading-font text-3xl text-espresso">Creative DNA & Vision</h2>
+                <p class="text-sm text-stone-600">Your core taste preferences, guidelines, and goals for Yvi's Ice Cream Lab.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Core Preferences -->
+                <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-4">
+                    <div class="flex items-center gap-2 border-b border-stone-100 pb-3">
+                        <i class="fa-solid fa-heart text-terracotta text-lg"></i>
+                        <h3 class="font-semibold text-espresso">Taste & Texture Preferences</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-stone-700">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pistachio mt-1"></i> Low-to-moderate sweetness; let high quality fruit or botanical tea shine.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pistachio mt-1"></i> Silky micro-crystal texture; avoid iciness or excessive gum chewiness.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pistachio mt-1"></i> Fresh, bright acidity (lime/lemon accent) on heavy fruit sorbets.</li>
+                    </ul>
+                </div>
+
+                <!-- Technical Rules -->
+                <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-4">
+                    <div class="flex items-center gap-2 border-b border-stone-100 pb-3">
+                        <i class="fa-solid fa-sliders text-terracotta text-lg"></i>
+                        <h3 class="font-semibold text-espresso">Ninja CREAMi Rules</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-stone-700">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-gear text-stone-400 mt-1"></i> Freeze base for full 24 hours at -18°C.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-gear text-stone-400 mt-1"></i> Always flatten top before freezing to protect blade.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-gear text-stone-400 mt-1"></i> If crumbly after 1st spin, add 10ml liquid and run 1 Re-Spin.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL 1: Add Flavor Concept -->
+    <div id="modal-flavor" class="fixed inset-0 bg-espresso/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-cream rounded-2xl max-w-md w-full p-6 shadow-xl border border-stone-200 space-y-4">
+            <h3 class="heading-font text-2xl text-espresso">New Flavor Concept</h3>
+            <div>
+                <label class="block text-xs font-semibold text-stone-600 mb-1">Flavor Title</label>
+                <input type="text" id="input-flavor-title" placeholder="e.g. Thai Tea, Mango Lime" class="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-terracotta">
+            </div>
+            <div>
+                <label class="block text-xs font-semibold text-stone-600 mb-1">Status Column</label>
+                <select id="input-flavor-status" class="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-terracotta">
+                    <option value="Flavor Ideas">Flavor Ideas</option>
+                    <option value="In Experiment">In Experiment</option>
+                    <option value="Final Recipes">Final Recipes</option>
+                </select>
+            </div>
+            <div class="flex justify-end gap-2 pt-2">
+                <button onclick="closeModal('flavor')" class="px-4 py-2 text-xs font-semibold text-stone-600 hover:bg-stone-200 rounded-lg">Cancel</button>
+                <button onclick="saveFlavor()" class="px-4 py-2 text-xs font-semibold text-white bg-terracotta hover:bg-terracotta/90 rounded-lg">Save Concept</button>
+            </div>
+        </div>
     </div>
-  </main>
 
-  <footer class="border-t border-stone-200 text-center py-4 text-xs text-stone-500">
-    CREAMI Lab — Data stored locally in browser
-  </footer>
+    <!-- MODAL 2: Add Trial Log -->
+    <div id="modal-trial" class="fixed inset-0 bg-espresso/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-cream rounded-2xl max-w-lg w-full p-6 shadow-xl border border-stone-200 space-y-4 my-8">
+            <h3 class="heading-font text-2xl text-espresso">Log Experiment Trial</h3>
+            <div>
+                <label class="block text-xs font-semibold text-stone-600 mb-1">Flavor Name</label>
+                <select id="input-trial-flavor" class="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-terracotta"></select>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+                <div>
+                    <label class="block text-xs font-semibold text-stone-600 mb-1">Trial #</label>
+                    <input type="number" id="input-trial-num" value="1" min="1" class="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-stone-600 mb-1">CREAMI Program</label>
+                    <select id="input-trial-preset" class="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm">
+                        <option value="Sorbet">Sorbet</option>
+                        <option value="Lite Ice Cream">Lite Ice Cream</option>
+                        <option value="Ice Cream">Ice Cream</option>
+                        <option value="Gelato">Gelato</option>
+                        <option value="Mix-In">Mix-In</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label class="block text-xs font-semibold text-stone-600 mb-1">Ingredients (g or ml)</label>
+                <textarea id="input-trial-ingredients" placeholder="e.g. 250g Lychee Puree, 150ml Jasmine Tea, 45g Sugar, 5ml Lime Juice" class="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm h-20"></textarea>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+                <div>
+                    <label class="block text-xs font-semibold text-stone-600 mb-1">Texture Score (1-10)</label>
+                    <input type="number" id="input-trial-texture" min="1" max="10" value="8" class="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-stone-600 mb-1">Sweetness Score (1-10)</label>
+                    <input type="number" id="input-trial-sweetness" min="1" max="10" value="7" class="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm">
+                </div>
+            </div>
+            <div>
+                <label class="block text-xs font-semibold text-stone-600 mb-1">Notes & Next Steps</label>
+                <textarea id="input-trial-notes" placeholder="What worked? What to change next time?" class="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm h-16"></textarea>
+            </div>
+            <div class="flex justify-end gap-2 pt-2">
+                <button onclick="closeModal('trial')" class="px-4 py-2 text-xs font-semibold text-stone-600 hover:bg-stone-200 rounded-lg">Cancel</button>
+                <button onclick="saveTrial()" class="px-4 py-2 text-xs font-semibold text-white bg-terracotta hover:bg-terracotta/90 rounded-lg">Save Trial Log</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: Add Idea -->
+    <div id="modal-idea" class="fixed inset-0 bg-espresso/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-cream rounded-2xl max-w-md w-full p-6 shadow-xl border border-stone-200 space-y-4">
+            <h3 class="heading-font text-2xl text-espresso">Quick Idea Note</h3>
+            <div>
+                <label class="block text-xs font-semibold text-stone-600 mb-1">Idea Spark</label>
+                <input type="text" id="input-idea-title" placeholder="e.g. Black Sesame + Vanilla Bean" class="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm">
+            </div>
+            <div>
+                <label class="block text-xs font-semibold text-stone-600 mb-1">Description / Notes</label>
+                <textarea id="input-idea-desc" placeholder="Nutty, rich dark gray base paired with fragrant vanilla..." class="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm h-20"></textarea>
+            </div>
+            <div class="flex justify-end gap-2 pt-2">
+                <button onclick="closeModal('idea')" class="px-4 py-2 text-xs font-semibold text-stone-600 hover:bg-stone-200 rounded-lg">Cancel</button>
+                <button onclick="saveIdea()" class="px-4 py-2 text-xs font-semibold text-white bg-espresso hover:bg-stone-800 rounded-lg">Save Idea</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Default Seed Data
+        const defaultData = {
+            flavors: [
+                { id: 'f1', title: 'Jasmine Lychee Sorbet', status: 'Final Recipes' },
+                { id: 'f2', title: 'Thai Tea', status: 'In Experiment' },
+                { id: 'f3', title: 'Mango Lime', status: 'In Experiment' },
+                { id: 'f4', title: 'Black Sesame', status: 'Flavor Ideas' },
+                { id: 'f5', title: 'Strawberry Basil', status: 'Flavor Ideas' }
+            ],
+            trials: [
+                {
+                    id: 't1',
+                    flavorId: 'f1',
+                    flavorTitle: 'Jasmine Lychee Sorbet',
+                    trialNum: 1,
+                    preset: 'Sorbet',
+                    ingredients: '250g Lychee Puree, 150ml Jasmine Tea, 60g Sugar',
+                    texture: 7,
+                    sweetness: 4,
+                    notes: 'A bit too sweet. Sugar muted the delicate tea aroma. Need to reduce sugar and double-steep the tea.',
+                    date: '2026-09-15'
+                },
+                {
+                    id: 't2',
+                    flavorId: 'f1',
+                    flavorTitle: 'Jasmine Lychee Sorbet',
+                    trialNum: 2,
+                    preset: 'Sorbet',
+                    ingredients: '250g Lychee Puree, 150ml Concentrated Jasmine Tea, 45g Sugar, 5ml Lime Juice',
+                    texture: 9,
+                    sweetness: 8,
+                    notes: 'Perfect balance! Lime juice rounded out the tropical fruit sweetness and jasmine flavor shone through cleanly.',
+                    date: '2026-09-16'
+                }
+            ],
+            ideas: [
+                { id: 'i1', title: 'Black Sesame + Vanilla', desc: 'Deep gray nuttiness paired with clean floral vanilla cream.' },
+                { id: 'i2', title: 'Strawberry Basil', desc: 'Fresh ripe summer berries with a subtle cold-infused sweet basil finish.' }
+            ]
+        };
+
+        // Initialize State from LocalStorage or Defaults
+        let state = JSON.parse(localStorage.getItem('creami_lab_data')) || defaultData;
+
+        function saveState() {
+            localStorage.setItem('creami_lab_data', JSON.stringify(state));
+            renderAll();
+        }
+
+        // Tab Navigation
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-espresso', 'text-cream');
+                btn.classList.add('text-stone-600');
+            });
+
+            document.getElementById(`view-${tabName}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${tabName}`);
+            activeBtn.classList.add('bg-espresso', 'text-cream');
+            activeBtn.classList.remove('text-stone-600');
+        }
+
+        // Render Kanban Board
+        function renderBoard() {
+            const cols = {
+                'Flavor Ideas': document.getElementById('col-ideas'),
+                'In Experiment': document.getElementById('col-experiment'),
+                'Final Recipes': document.getElementById('col-final')
+            };
+
+            Object.values(cols).forEach(col => col.innerHTML = '');
+
+            const counts = { 'Flavor Ideas': 0, 'In Experiment': 0, 'Final Recipes': 0 };
+
+            state.flavors.forEach(flavor => {
+                counts[flavor.status]++;
+                const card = document.createElement('div');
+                card.className = "bg-white p-4 rounded-xl border border-stone-200 shadow-sm cursor-grab active:cursor-grabbing hover:border-terracotta transition";
+                card.draggable = true;
+                card.ondragstart = (e) => e.dataTransfer.setData('text/plain', flavor.id);
+
+                card.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-semibold text-espresso text-sm">${flavor.title}</h4>
+                        <button onclick="deleteFlavor('${flavor.id}')" class="text-stone-300 hover:text-red-500 text-xs">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+                cols[flavor.status].appendChild(card);
+            });
+
+            document.getElementById('count-ideas').innerText = counts['Flavor Ideas'];
+            document.getElementById('count-experiment').innerText = counts['In Experiment'];
+            document.getElementById('count-final').innerText = counts['Final Recipes'];
+        }
+
+        // Drag & Drop
+        function allowDrop(e) { e.preventDefault(); }
+        function drop(e, targetStatus) {
+            e.preventDefault();
+            const id = e.dataTransfer.getData('text/plain');
+            const flavor = state.flavors.find(f => f.id === id);
+            if (flavor) {
+                flavor.status = targetStatus;
+                saveState();
+            }
+        }
+
+        // Render Trials Timeline
+        function renderTrials() {
+            const container = document.getElementById('trials-timeline');
+            container.innerHTML = '';
+
+            if (state.trials.length === 0) {
+                container.innerHTML = `<p class="text-sm text-stone-400 italic">No trials logged yet.</p>`;
+                return;
+            }
+
+            state.trials.slice().reverse().forEach(trial => {
+                const item = document.createElement('div');
+                item.className = "border-l-2 border-terracotta pl-4 relative space-y-1";
+                item.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-wider text-terracotta">${trial.flavorTitle} — Trial #${trial.trialNum}</span>
+                        <span class="text-xs text-stone-400">${trial.date}</span>
+                    </div>
+                    <p class="text-xs font-semibold text-stone-700">Preset: <span class="bg-stone-100 px-2 py-0.5 rounded text-stone-600">${trial.preset}</span></p>
+                    <p class="text-xs text-stone-600"><strong>Ingredients:</strong> ${trial.ingredients}</p>
+                    <div class="flex gap-4 text-xs font-medium text-stone-500 py-1">
+                        <span>Texture: ${trial.texture}/10</span>
+                        <span>Sweetness: ${trial.sweetness}/10</span>
+                    </div>
+                    <p class="text-xs text-stone-600 bg-cream p-2.5 rounded-lg border border-stone-200">"${trial.notes}"</p>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        // Render Master Recipes
+        function renderMasterRecipes() {
+            const container = document.getElementById('master-recipes-list');
+            container.innerHTML = '';
+
+            const masterFlavors = state.flavors.filter(f => f.status === 'Final Recipes');
+
+            if (masterFlavors.length === 0) {
+                container.innerHTML = `<p class="text-sm text-stone-400 italic col-span-full">No final master recipes promoted yet.</p>`;
+                return;
+            }
+
+            masterFlavors.forEach(flavor => {
+                const lastTrial = state.trials.filter(t => t.flavorId === flavor.id).pop();
+                const card = document.createElement('div');
+                card.className = "bg-white p-5 rounded-2xl border border-stone-200 shadow-sm space-y-3";
+                card.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <h3 class="heading-font text-xl text-espresso">${flavor.title}</h3>
+                        <span class="text-xs px-2 py-1 bg-pistachioLight text-pistachio font-bold rounded-lg">Master</span>
+                    </div>
+                    <p class="text-xs text-stone-600"><strong>Base Formulation:</strong> ${lastTrial ? lastTrial.ingredients : 'Standard Base'}</p>
+                    <p class="text-xs text-stone-500"><strong>CREAMI Preset:</strong> ${lastTrial ? lastTrial.preset : 'Sorbet'}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Render Ideas
+        function renderIdeas() {
+            const container = document.getElementById('ideas-grid');
+            container.innerHTML = '';
+
+            state.ideas.forEach(idea => {
+                const card = document.createElement('div');
+                card.className = "bg-creamDark p-4 rounded-xl border border-stone-200 space-y-2 relative";
+                card.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <h4 class="font-semibold text-espresso text-sm">${idea.title}</h4>
+                        <button onclick="deleteIdea('${idea.id}')" class="text-stone-400 hover:text-red-500 text-xs"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <p class="text-xs text-stone-600">${idea.desc}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Modals Management
+        function openModal(type) {
+            if (type === 'trial') {
+                const select = document.getElementById('input-trial-flavor');
+                select.innerHTML = '';
+                state.flavors.forEach(f => {
+                    const opt = document.createElement('option');
+                    opt.value = f.id;
+                    opt.innerText = f.title;
+                    select.appendChild(opt);
+                });
+            }
+            document.getElementById(`modal-${type}`).classList.remove('hidden');
+        }
+
+        function closeModal(type) {
+            document.getElementById(`modal-${type}`).classList.add('hidden');
+        }
+
+        // Save Actions
+        function saveFlavor() {
+            const title = document.getElementById('input-flavor-title').value.trim();
+            const status = document.getElementById('input-flavor-status').value;
+            if (!title) return;
+
+            state.flavors.push({ id: 'f_' + Date.now(), title, status });
+            saveState();
+            closeModal('flavor');
+            document.getElementById('input-flavor-title').value = '';
+        }
+
+        function saveTrial() {
+            const flavorId = document.getElementById('input-trial-flavor').value;
+            const flavor = state.flavors.find(f => f.id === flavorId);
+            const trialNum = document.getElementById('input-trial-num').value;
+            const preset = document.getElementById('input-trial-preset').value;
+            const ingredients = document.getElementById('input-trial-ingredients').value;
+            const texture = document.getElementById('input-trial-texture').value;
+            const sweetness = document.getElementById('input-trial-sweetness').value;
+            const notes = document.getElementById('input-trial-notes').value;
+
+            state.trials.push({
+                id: 't_' + Date.now(),
+                flavorId,
+                flavorTitle: flavor ? flavor.title : 'Flavor',
+                trialNum,
+                preset,
+                ingredients,
+                texture,
+                sweetness,
+                notes,
+                date: new Date().toISOString().split('T')[0]
+            });
+
+            saveState();
+            closeModal('trial');
+        }
+
+        function saveIdea() {
+            const title = document.getElementById('input-idea-title').value.trim();
+            const desc = document.getElementById('input-idea-desc').value.trim();
+            if (!title) return;
+
+            state.ideas.push({ id: 'i_' + Date.now(), title, desc });
+            saveState();
+            closeModal('idea');
+            document.getElementById('input-idea-title').value = '';
+            document.getElementById('input-idea-desc').value = '';
+        }
+
+        function deleteFlavor(id) {
+            state.flavors = state.flavors.filter(f => f.id !== id);
+            saveState();
+        }
+
+        function deleteIdea(id) {
+            state.ideas = state.ideas.filter(i => i.id !== id);
+            saveState();
+        }
+
+        // Export/Import Data
+        function exportData() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state, null, 2));
+            const dlAnchorElem = document.createElement('a');
+            dlAnchorElem.setAttribute("href", dataStr);
+            dlAnchorElem.setAttribute("download", `creami_lab_backup_${new Date().toISOString().split('T')[0]}.json`);
+            dlAnchorElem.click();
+        }
+
+        function importData(event) {
+            const fileReader = new FileReader();
+            fileReader.onload = function(e) {
+                try {
+                    state = JSON.parse(e.target.result);
+                    saveState();
+                    alert("Lab data restored successfully!");
+                } catch(err) {
+                    alert("Invalid JSON data file.");
+                }
+            };
+            fileReader.readAsText(event.target.files[0]);
+        }
+
+        // Master Render Function
+        function renderAll() {
+            renderBoard();
+            renderTrials();
+            renderMasterRecipes();
+            renderIdeas();
+        }
+
+        // Initial Boot
+        window.onload = function() {
+            renderAll();
+        };
+    </script>
 </body>
 </html>
